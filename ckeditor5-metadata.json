@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    {
+      "name": "Placeholder",
+      "className": "Placeholder",
+      "description": "Adds placeholder to the editor.",
+      "path": "src/placeholder.ts",
+      "uiComponents": [
+        {
+          "name": "placeholderButton",
+          "type": "Button",
+          "iconPath": "theme/icons/button.svg"
+        }
+      ]
+    }
+  ]
+}
