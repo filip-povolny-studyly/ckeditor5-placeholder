@@ -18,6 +18,7 @@ import {
 	CLASS_NAME_SIZE_REGEXP,
 	CLASS_NAME_TYPE_REGEXP,
 	COMMAND_NAME,
+	CONFIG_KEY,
 	PLACEHOLDER_REGEXP,
 	SCHEMA_ITEM_NAME
 } from './constants';
@@ -34,10 +35,11 @@ export default class PlaceholderEditing extends Plugin {
 		this._defineConverters();
 
 		const editor = this.editor;
+		const { t } = editor.locale;
 
 		editor.commands.add(
 			COMMAND_NAME,
-			new PlaceholderCommand( this.editor )
+			new PlaceholderCommand( editor )
 		);
 
 		editor.editing.mapper.on(
@@ -47,6 +49,10 @@ export default class PlaceholderEditing extends Plugin {
 				viewElement => viewElement.hasClass( CLASS_NAME_CONTAINER )
 			)
 		);
+
+		editor.config.define( CONFIG_KEY, {
+			defaultLabel: t( 'Placeholder' )
+		} );
 	}
 
 	private _defineSchema() {
@@ -135,17 +141,17 @@ export default class PlaceholderEditing extends Plugin {
 	 * @description create an input placeholder HTML UI element
 	 * @param {Element} modelElement model element
 	 * @param {DowncastWriter} writer downcast writer to create the HTML element
-	 * @returns {ViewUIElement} input placeholder HTML element
+	 * @returns {ViewUI>Element} input placeholder HTML element
 	 */
 	private _createUIElement(
 		modelElement: Element,
 		writer: DowncastWriter
 	): ViewUIElement {
-		const { t } = this.editor.locale;
 		const attrs = new Map( modelElement.getAttributes() );
 		const classNames = Array.from( attrs ).map(
 			( [ key, value ] ) => `input-placeholder-${ key }-${ value }`
 		);
+		const config = this.editor.config.get( CONFIG_KEY )!;
 		return writer.createUIElement(
 			'span',
 			{
@@ -155,7 +161,7 @@ export default class PlaceholderEditing extends Plugin {
 			},
 			function( domDocument ) {
 				const domElement = this.toDomElement( domDocument );
-				domElement.innerText = t( 'Solution' );
+				domElement.innerText = config.defaultLabel!;
 				return domElement;
 			}
 		);
