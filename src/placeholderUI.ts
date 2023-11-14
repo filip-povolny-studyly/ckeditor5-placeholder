@@ -1,6 +1,7 @@
 import { Plugin } from 'ckeditor5/src/core';
 import { ClickObserver } from 'ckeditor5/src/engine';
 import { ButtonView } from 'ckeditor5/src/ui';
+import type { Emitter } from 'ckeditor5/src/utils';
 import buttonIcon from '../theme/icons/button.svg';
 import {
 	COMMAND_NAME,
@@ -39,10 +40,10 @@ export default class PlaceholderUI extends Plugin {
 			return view;
 		} );
 
-
-		const view = editor.editing.view
-		view.addObserver(ClickObserver)
-		this.listenTo( view.document, 'click', ( _event, data ) => {
+		const view = editor.editing.view;
+		view.addObserver( ClickObserver );
+		const viewDocument = view.document as unknown as Emitter;
+		this.listenTo( viewDocument, 'click', ( _event, data ) => {
 			const modelElement = editor.editing.mapper.toModelElement(
 				data.target.parent
 			);

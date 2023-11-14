@@ -1,7 +1,7 @@
 {
   "name": "@studyly/ckeditor5-placeholder",
   "version": "37.1.0",
-  "description": "A plugin for CKEditor 5.",
+  "description": "Placeholder feature for CKEditor 5.",
   "keywords": [
     "ckeditor",
     "ckeditor5",
@@ -72,7 +72,7 @@
     "start": "ckeditor5-package-tools start",
     "stylelint": "stylelint --quiet --allow-empty-input 'theme/**/*.css'",
     "test": "ckeditor5-package-tools test",
-    "off:prepare": "npm run dll:build",
+    "prepare": "npm run dll:build",
     "prepublishOnly": "npm run ts:build && ckeditor5-package-tools export-package-as-javascript",
     "postpublish": "npm run ts:clear && ckeditor5-package-tools export-package-as-typescript",
     "translations:collect": "ckeditor5-package-tools translations:collect",
