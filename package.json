@@ -72,9 +72,6 @@
     "start": "ckeditor5-package-tools start",
     "stylelint": "stylelint --quiet --allow-empty-input 'theme/**/*.css'",
     "test": "ckeditor5-package-tools test",
-    "prepare": "npm run dll:build",
-    "prepublishOnly": "npm run ts:build && ckeditor5-package-tools export-package-as-javascript",
-    "postpublish": "npm run ts:clear && ckeditor5-package-tools export-package-as-typescript",
     "translations:collect": "ckeditor5-package-tools translations:collect",
     "translations:download": "ckeditor5-package-tools translations:download",
     "translations:upload": "ckeditor5-package-tools translations:upload"
