@@ -1,6 +1,6 @@
 {
   "name": "@studyly/ckeditor5-placeholder",
-  "version": "0.0.1",
+  "version": "37.1.0",
   "description": "A plugin for CKEditor 5.",
   "keywords": [
     "ckeditor",
@@ -11,7 +11,7 @@
     "ckeditor5-dll",
     "ckeditor5-package-generator"
   ],
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "license": "MIT",
   "engines": {
     "node": ">=16.0.0",
@@ -36,7 +36,7 @@
     "@ckeditor/ckeditor5-heading": "^37.1.0",
     "@ckeditor/ckeditor5-image": "^37.1.0",
     "@ckeditor/ckeditor5-indent": "^37.1.0",
-    "@ckeditor/ckeditor5-inspector": ">=4.1.0",
+    "@ckeditor/ckeditor5-inspector": "^4.1.0",
     "@ckeditor/ckeditor5-link": "^37.1.0",
     "@ckeditor/ckeditor5-list": "^37.1.0",
     "@ckeditor/ckeditor5-media-embed": "^37.1.0",
@@ -72,7 +72,7 @@
     "start": "ckeditor5-package-tools start",
     "stylelint": "stylelint --quiet --allow-empty-input 'theme/**/*.css'",
     "test": "ckeditor5-package-tools test",
-    "prepare": "npm run dll:build",
+    "off:prepare": "npm run dll:build",
     "prepublishOnly": "npm run ts:build && ckeditor5-package-tools export-package-as-javascript",
     "postpublish": "npm run ts:clear && ckeditor5-package-tools export-package-as-typescript",
     "translations:collect": "ckeditor5-package-tools translations:collect",
