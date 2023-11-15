@@ -149,7 +149,7 @@ export default class PlaceholderEditing extends Plugin {
 	): ViewUIElement {
 		const attrs = new Map( modelElement.getAttributes() );
 		const classNames = Array.from( attrs ).map(
-			( [ key, value ] ) => `input-placeholder-${ key }-${ value }`
+			( [ key, value ] ) => `${CLASS_NAME}-${ key }-${ value }`
 		);
 		const config = this.editor.config.get( CONFIG_KEY )!;
 		return writer.createUIElement(
