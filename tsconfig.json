@@ -17,6 +17,10 @@
       "node_modules/@types"
     ]
   },
-  "files": ["src/index.ts"],
-  "include": ["./**/*.d.ts"]
+  "include": [
+    "./sample",
+    "./src",
+    "./tests",
+    "./typings"
+  ]
 }
