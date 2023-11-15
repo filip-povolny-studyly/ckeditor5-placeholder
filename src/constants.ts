@@ -5,7 +5,7 @@ export const SCHEMA_ITEM_NAME = 'placeholder';
 export const CONFIG_KEY = 'placeholderPlugin';
 export const CONFIG_DEFAULT_TEXT = 'Placeholder';
 export const EVENT_CLICK_NAME = 'placeholder';
-export const CLASS_NAME = 'placeholder';
+export const CLASS_NAME = 'input-placeholder';
 export const CLASS_NAME_CONTAINER = `${ CLASS_NAME }-container`;
 
 const TYPE_PATTERN = 'input|math|text|select';
