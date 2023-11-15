@@ -1,4 +1,4 @@
-@studyly/ckeditor5-placeholder
+@filip-povolny-studyly/ckeditor5-placeholder
 ==============================
 
 This package was created by the [ckeditor5-package-generator](https://www.npmjs.com/package/ckeditor5-package-generator) package.
@@ -163,6 +163,6 @@ npm run translations:upload -- --transifex [API URL]
 
 ## License
 
-The `@studyly/ckeditor5-placeholder` package is available under [MIT license](https://opensource.org/licenses/MIT).
+The `@filip-povolny-studyly/ckeditor5-placeholder` package is available under [MIT license](https://opensource.org/licenses/MIT).
 
 However, it is the default license of packages created by the [ckeditor5-package-generator](https://www.npmjs.com/package/ckeditor5-package-generator) package and it can be changed.
