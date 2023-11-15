@@ -14,7 +14,7 @@ import { getNextId } from './utils';
 /**
  * Button to insert input placeholder.
  *
- * Currently not used, input placeholders are inserted by calling inputPlaceholder command from outside.
+ * Currently not used, input placeholders are inserted by calling placeholder command from outside.
  */
 export default class PlaceholderUI extends Plugin {
 	public init(): void {

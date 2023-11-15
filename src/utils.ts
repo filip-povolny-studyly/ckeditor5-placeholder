@@ -8,7 +8,7 @@ import { SCHEMA_ITEM_NAME, PLACEHOLDERS_REGEXP } from './constants';
  */
 export function getIds( text: string ): Array<number> {
 	return Array.from( text.matchAll( PLACEHOLDERS_REGEXP ) ).map(
-		( { groups } ) => Number.parseInt( groups!.id )
+		( { groups } ) => Number.parseInt( groups!['id'] )
 	);
 }
 

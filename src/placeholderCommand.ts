@@ -10,19 +10,19 @@ export default class PlaceholderCommand extends Command {
 	public override execute( template: string ): void {
 		if ( template === undefined ) {
 			throw Error(
-				'Argument "template" is required in inputPlaceholderCommand.'
+				'Argument "template" is required in placeholderCommand.'
 			);
 		}
 
 		const model = this.editor.model;
 
 		model.change( writer => {
-			const inputPlaceholderMatches = Array.from(
+			const placeholderMatches = Array.from(
 				template.matchAll( PLACEHOLDERS_REGEXP )
 			);
 
 			let text = template;
-			inputPlaceholderMatches.forEach( match => {
+			placeholderMatches.forEach( match => {
 				const [ textBefore, textAfter ] = text.split( match[ 0 ], 2 );
 				// insert text before the input placeholder
 				if ( textBefore ) {

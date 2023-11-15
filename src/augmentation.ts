@@ -7,7 +7,7 @@ declare module '@ckeditor/ckeditor5-core' {
 	}
 }
 
-declare module '@ckeditor/ckeditor5-core/src/editor/editorconfig' {
+declare module '@ckeditor/ckeditor5-core' {
 	interface EditorConfig {
 		placeholderPlugin?: PlaceholderConfig;
 	}
